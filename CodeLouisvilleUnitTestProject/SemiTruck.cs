@@ -12,12 +12,9 @@ namespace CodeLouisvilleUnitTestProject
         /// </summary>
         public SemiTruck(int numberOfTires, double gasTankCapacity, string make, string model, double milesPerGallon)
         {
-            //YOUR CODE HERE: 
+            
             NumberOfTires = 18;
-<<<<<<< HEAD
-         
-=======
->>>>>>> c89ad1ce84e59cd60f92602e251782149cb5cd19
+
         }
 
         /// <summary>
@@ -25,16 +22,11 @@ namespace CodeLouisvilleUnitTestProject
         /// </summary>
         /// <param name="item">The CargoItem to add</param>
         public void LoadCargo(CargoItem item)
-        {
-<<<<<<< HEAD
-            List<CargoItem> Cargo = new();
-            Cargo.Add(item);           
 
-=======
-            //YOUR CODE HERE
+        {    
+ 
             List<CargoItem> cargo = new List<CargoItem>();
             cargo.Add(item);
->>>>>>> c89ad1ce84e59cd60f92602e251782149cb5cd19
         }
     
              
@@ -46,22 +38,13 @@ namespace CodeLouisvilleUnitTestProject
         /// <exception cref="ArgumentException">Thrown if no CargoItem in the Cargo matches the passed name</exception>
        public CargoItem UnloadCargo(CargoItem name)
         {
-<<<<<<< HEAD
             var  Result = Cargo.Remove(name);
             if (Result)
             return name;
             else throw new ArgumentException();
 
          }
-        
-=======
-            //YOUR CODE HERE
-            Cargo.Remove(name);
-            return CargoItem;
-            
-           
-        }
->>>>>>> c89ad1ce84e59cd60f92602e251782149cb5cd19
+      
 
         /// <summary>
         /// Returns all CargoItems with the exact name passed. If no CargoItems have that name, returns an empty List.

@@ -7,7 +7,7 @@ using Xunit;
 
 namespace CodeLouisvilleUnitTestProjectTests
 {
-    public class VehicleTestsShould
+    public class VehicleTests
     {
             
 
@@ -20,25 +20,17 @@ namespace CodeLouisvilleUnitTestProjectTests
         public void VehicleParameterlessConstructorTest()
         {
             //arrange
-<<<<<<< HEAD
             Vehicle vehicle = new(0, 0, "", "", 0);
             //act
 
             //assert
             using (new AssertionScope())
             {
-                vehicle.GasTankCapacity.Should().Be(0);
-                vehicle.MilesPerGallon.Should().Be(0);
-                vehicle.Make.Should().Be("");
-                vehicle.Model.Should().Be("");
+                _ = vehicle.GasTankCapacity.Should().Be(0);
+                _ = vehicle.MilesPerGallon.Should().Be(0);
+                _ = vehicle.Make.Should().Be("");
+                _ = vehicle.Model.Should().Be("");
             }
-=======
-            Vehicle vehicle = new (0, 0, "", "", 0);
-            //act
-
-            //assert
-            vehicle.Should().Be(vehicle);
->>>>>>> c89ad1ce84e59cd60f92602e251782149cb5cd19
         }
 
         
@@ -49,25 +41,17 @@ namespace CodeLouisvilleUnitTestProjectTests
         public void VehicleConstructorTest()
         {
             //arrange
-<<<<<<< HEAD
             Vehicle vehicle = new Vehicle(4, 10, "Toyota", "Camry", 30);
             //act
 
             //assert
             using (new AssertionScope())
             {
-                vehicle.Should().NotBeNull();
-                vehicle.Make.Should().Be("Toyota");
-                vehicle.GasTankCapacity.Should().Be(10);
+                _ = vehicle.Should().NotBeNull();
+                _ = vehicle.Make.Should().Be("Toyota");
+                _ = vehicle.GasTankCapacity.Should().Be(10);
             }
 
-=======
-            Vehicle vehicle = new(4,10,"Toyota","Camry",30);
-            //act
-
-            //assert
-            vehicle.Should().Be(vehicle);
->>>>>>> c89ad1ce84e59cd60f92602e251782149cb5cd19
         }
 
         //Verify that the parameterless AddGas method fills the gas tank
@@ -76,17 +60,12 @@ namespace CodeLouisvilleUnitTestProjectTests
         public void AddGasParameterlessFillsGasToMax()
         {
             //arrange
-<<<<<<< HEAD
             Vehicle vehicle = new(4,20,"Toyota","Camry",30);
 
-=======
-
-            double _gasRemaining = 0;
->>>>>>> c89ad1ce84e59cd60f92602e251782149cb5cd19
             //act
-            vehicle.AddGas();
+            _ = vehicle.AddGas();
             //assert
-            vehicle.GasLevel.Should().Be("100%");
+            _ = vehicle.GasLevel.Should().Be("100%");
         }
 
         //Verify that the AddGas method with a parameter adds the
@@ -95,36 +74,28 @@ namespace CodeLouisvilleUnitTestProjectTests
         public void AddGasWithParameterAddsSuppliedAmountOfGas()
         {
             //arrange
-<<<<<<< HEAD
             Vehicle vehicle = new(4, 20, "Toyota", "Camry", 30);
-=======
-            
->>>>>>> c89ad1ce84e59cd60f92602e251782149cb5cd19
             //act
-            vehicle.AddGas(10);
+            _ = vehicle.AddGas(10);
 
             //assert
-            vehicle.GasLevel.Should().Be("50%");
+            _ = vehicle.GasLevel.Should().Be("50%");
         }
 
         //Verify that the AddGas method with a parameter will throw
         //a GasOverfillException if too much gas is added to the tank.
-//[Fact]
-  //     public void AddingTooMuchGasThrowsGasOverflowException()
-    //    {
-            //arrange
-      //     Vehicle vehicle = new Vehicle(4, 15, "Benz", "GL450", 30);
+         [Fact]
+            public void AddingTooMuchGasThrowsGasOverflowException()
+                {
+          //arrange
+            Vehicle vehicle = new Vehicle(4, 15, "Benz", "GL450", 30);
 
             //act
-          
-        //    GasTankCapacity = 15;
-            
-          // Action act = () => vehicle.AddGas(16);
+            Action act = () => vehicle.AddGas(16);
             //assert
-              
-                
-          // act .Should().Throw<GasOverfillException>().WithMessage("Unable to add too mach gas  because it's capacity only holds 15");
-        //}
+            act.Should().Throw<GasOverfillException>().WithMessage("Unable to add 16 gallons to tank because it would exceed the capacity of 15 gallons");
+
+            }
 
         //Using a Theory (or data-driven test), verify that the GasLevel
         //property returns the correct percentage when the gas level is
@@ -138,15 +109,11 @@ namespace CodeLouisvilleUnitTestProjectTests
         public void GasLevelPercentageIsCorrectForAmountOfGas(string percent, float gasToAdd)
         {
             //arrange
-<<<<<<< HEAD
             Vehicle vehicle = new Vehicle(4, 10, "Benz", "GL450", 25);
-=======
-            Vehicle vehicle = new(4, 10, "Benz", "GL450", 25);
->>>>>>> c89ad1ce84e59cd60f92602e251782149cb5cd19
             //act
-            vehicle.AddGas(gasToAdd);
+            _ = vehicle.AddGas(gasToAdd);
             //assert
-            vehicle.GasLevel.Should().Be(percent);
+            _ = vehicle.GasLevel.Should().Be(percent);
         }
 
         /*
@@ -182,11 +149,11 @@ namespace CodeLouisvilleUnitTestProjectTests
             //act
           
            string Status = vehicle.Drive(20);
-           
+
 
             //assert
-           
-            Status.Should().Be("Cannot drive, out of gas.");
+
+            _ = Status.Should().Be("Cannot drive, out of gas.");
          }
        
 
@@ -220,19 +187,30 @@ namespace CodeLouisvilleUnitTestProjectTests
         //Verify that ChangeTireAsync can successfully
         //be used to change a flat tire
          [Fact]
-        public async Task ChangeTireSuccessfulTest()
-        {
+          public void DriverHasFlatTire()
+           {
         //arrange
          Vehicle vehicle = new Vehicle(4, 15, "Toyota", "Camry", 30);
 
             //act
-            vehicle.Drive(15);
+            
+            _ = vehicle.Drive(15);
 
 
-        //assert
-        vehicle.HasFlatTire.Should().Be(false);
+            //assert
+             vehicle.HasFlatTire.Should().Be(false);
+            
         
         }
+         [Fact]
+             public async Task ChangeTireSuccessfulTest()
+              {
+            Vehicle vehicle = new Vehicle(4, 15, "Toyota", "Camry", 30);
+             vehicle.Drive(10);
+             await vehicle.ChangeTireSuccessfulTestAsync();
+            
+            vehicle.HasFlatTire.Should().Be(true);
+              }
 
 
 
@@ -241,6 +219,6 @@ namespace CodeLouisvilleUnitTestProjectTests
         //BONUS: Write a unit test that verifies that a flat
         //tire will occur after a certain number of miles.
 
-        //}
+    //}
     }
 }

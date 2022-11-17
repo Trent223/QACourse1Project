@@ -15,16 +15,13 @@ namespace CodeLouisvilleUnitTestProjectTests
         public void NewSemiTruckIsAVehicleAndHas18TiresAndEmptyCargoTest()
         {
             //arrange
-<<<<<<< HEAD
-            SemiTruck semiTruck = new (18, 20, "Toyota", "Camry", 30);
+            SemiTruck semiTruck = new(18, 20, "Toyota", "Camry", 15);
 
-=======
-            SemiTruck semiTruck = new SemiTruck();
->>>>>>> c89ad1ce84e59cd60f92602e251782149cb5cd19
+
             //act
-            
+
             //assert
-            semiTruck.NumberOfTires.Should().Be(18);
+            _ = semiTruck.NumberOfTires.Should().Be(18);
                
             
         }
@@ -36,9 +33,9 @@ namespace CodeLouisvilleUnitTestProjectTests
         public void LoadCargoTest()
         {
             //arrange
-            throw new NotImplementedException();
+            SemiTruck semiTruck = new(18, 20, "Toyota", "Camry", 15);
             //act
-
+            
             //assert
 
         }
