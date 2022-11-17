@@ -159,23 +159,7 @@ namespace CodeLouisvilleUnitTestProjectTests
            
             Status.Should().Be("Cannot drive, out of gas.");
          }
-        [Fact]
-        public void DriveCar10Miles()
-        {
-            //arrange
-
-            Vehicle vehicle = new(4, 20, "Benz", "GL450", 30);
-
-            //act
-            vehicle.AddGas();
-
-            string status = vehicle.Drive(10);
-           
-
-            //assert
-
-            status.Should().Be("Drove 10 miles using 0.33 gallons of gas.");
-        }
+       
 
        
         // [Theory]

@@ -50,14 +50,14 @@ namespace CodeLouisvilleUnitTestProject
         /// </summary>
         /// <param name="name">The name to match</param>
         /// <returns>A List of CargoItems with the exact name passed</returns>
-        public List<CargoItem> GetCargoItemsByName(string name)
-        {
-            if (name)
-            {
-                return Cargo;
-            }
+       // public List<CargoItem> GetCargoItemsByName(string name)
+        //{
+          //  if (name)
+            //{
+              //  return Cargo;
+            //}
             
-        }
+        //}
 
         /// <summary>
         ///  Returns all CargoItems who have a description containing the passed description. If no CargoItems have that name, returns an empty list.
