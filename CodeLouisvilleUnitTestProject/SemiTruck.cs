@@ -35,12 +35,14 @@ namespace CodeLouisvilleUnitTestProject
         /// <param name="name">The name of the CargoItem to attempt to remove</param>
         /// <returns>The removed CargoItem</returns>
         /// <exception cref="ArgumentException">Thrown if no CargoItem in the Cargo matches the passed name</exception>
-       // public CargoItem UnloadCargo(string name)
-        //{
-       //   Cargo.Remove(name);
-        
-                           
-        //}
+       public CargoItem UnloadCargo(CargoItem name)
+        {
+            var  Result = Cargo.Remove(name);
+            if (Result)
+            return name;
+            else throw new ArgumentException();
+
+         }
         
 
         /// <summary>
@@ -50,8 +52,11 @@ namespace CodeLouisvilleUnitTestProject
         /// <returns>A List of CargoItems with the exact name passed</returns>
         public List<CargoItem> GetCargoItemsByName(string name)
         {
-            //YOUR CODE HERE
-            throw new NotImplementedException();
+            if (name)
+            {
+                return Cargo;
+            }
+            
         }
 
         /// <summary>
