@@ -190,18 +190,20 @@ namespace CodeLouisvilleUnitTestProjectTests
 
         //Verify that ChangeTireAsync can successfully
         //be used to change a flat tire
-        //  [Fact]
-        // public Task ChangeTireSuccessfulTest()
-        //{
+         [Fact]
+        public async Task ChangeTireSuccessfulTest()
+        {
         //arrange
-        //  Vehicle vehicle = new Vehicle(4, 15, "Toyota", "Camry", 30);
+         Vehicle vehicle = new Vehicle(4, 15, "Toyota", "Camry", 30);
 
-        //act
+            //act
+            vehicle.Drive(15);
+
 
         //assert
-        //vehicle.HasFlatTire.Should().Be(false);
-        //Task.CompletedTask;
-        //}
+        vehicle.HasFlatTire.Should().Be(false);
+        
+        }
 
 
 
