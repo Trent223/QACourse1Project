@@ -1,4 +1,7 @@
-﻿namespace CodeLouisvilleUnitTestProject
+﻿using CodeLouisvilleUnitTestProject;
+using System.Collections.Generic;
+
+namespace CodeLouisvilleUnitTestProject
 {
     public class SemiTruck : Vehicle
     {
@@ -7,10 +10,11 @@
         /// <summary>
         /// Creates a new SemiTruck that always has 18 Tires
         /// </summary>
-        public SemiTruck()
+        public SemiTruck(int numberOfTires, double gasTankCapacity, string make, string model, double milesPerGallon)
         {
             //YOUR CODE HERE: 
-            throw new NotImplementedException();
+            NumberOfTires = 18;
+         
         }
 
         /// <summary>
@@ -19,21 +23,25 @@
         /// <param name="item">The CargoItem to add</param>
         public void LoadCargo(CargoItem item)
         {
-            //YOUR CODE HERE
-            throw new NotImplementedException();
+            List<CargoItem> Cargo = new();
+            Cargo.Add(item);           
+
         }
-            
+    
+             
         /// <summary>
         /// Attempts to remove the first item with the passed name from the Cargo and return it
         /// </summary>
         /// <param name="name">The name of the CargoItem to attempt to remove</param>
         /// <returns>The removed CargoItem</returns>
         /// <exception cref="ArgumentException">Thrown if no CargoItem in the Cargo matches the passed name</exception>
-        public CargoItem UnloadCargo(string name)
-        {
-            //YOUR CODE HERE
-            throw new NotImplementedException();
-        }
+       // public CargoItem UnloadCargo(string name)
+        //{
+       //   Cargo.Remove(name);
+        
+                           
+        //}
+        
 
         /// <summary>
         /// Returns all CargoItems with the exact name passed. If no CargoItems have that name, returns an empty List.

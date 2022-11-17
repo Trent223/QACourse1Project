@@ -11,12 +11,14 @@
         public string GasLevel => $"{_gasRemaining / GasTankCapacity * 100}%";
         public double MilesRemaining => _gasRemaining * MilesPerGallon;
         public double Mileage => _mileage;
+        public double GasRemaining;
         #endregion
 
         #region Private Fields
         private double _gasRemaining;
         private double _mileage;
         private bool _hasFlatTire;
+        public bool HasFlatTire => _hasFlatTire;    
         #endregion
 
         #region Private Properties
@@ -133,5 +135,7 @@
             double rand = randomNumberGenerator.NextDouble();
             return rand < probabilityOfFlatThisTrip;
         }
+
+      
     }
 }
