@@ -7,7 +7,7 @@ using Xunit;
 
 namespace CodeLouisvilleUnitTestProjectTests
 {
-    public class VehicleTests
+    public class VehicleTestsShould
     {
             
 
@@ -20,6 +20,7 @@ namespace CodeLouisvilleUnitTestProjectTests
         public void VehicleParameterlessConstructorTest()
         {
             //arrange
+<<<<<<< HEAD
             Vehicle vehicle = new(0, 0, "", "", 0);
             //act
 
@@ -31,6 +32,13 @@ namespace CodeLouisvilleUnitTestProjectTests
                 vehicle.Make.Should().Be("");
                 vehicle.Model.Should().Be("");
             }
+=======
+            Vehicle vehicle = new (0, 0, "", "", 0);
+            //act
+
+            //assert
+            vehicle.Should().Be(vehicle);
+>>>>>>> c89ad1ce84e59cd60f92602e251782149cb5cd19
         }
 
         
@@ -41,6 +49,7 @@ namespace CodeLouisvilleUnitTestProjectTests
         public void VehicleConstructorTest()
         {
             //arrange
+<<<<<<< HEAD
             Vehicle vehicle = new Vehicle(4, 10, "Toyota", "Camry", 30);
             //act
 
@@ -52,6 +61,13 @@ namespace CodeLouisvilleUnitTestProjectTests
                 vehicle.GasTankCapacity.Should().Be(10);
             }
 
+=======
+            Vehicle vehicle = new(4,10,"Toyota","Camry",30);
+            //act
+
+            //assert
+            vehicle.Should().Be(vehicle);
+>>>>>>> c89ad1ce84e59cd60f92602e251782149cb5cd19
         }
 
         //Verify that the parameterless AddGas method fills the gas tank
@@ -60,8 +76,13 @@ namespace CodeLouisvilleUnitTestProjectTests
         public void AddGasParameterlessFillsGasToMax()
         {
             //arrange
+<<<<<<< HEAD
             Vehicle vehicle = new(4,20,"Toyota","Camry",30);
 
+=======
+
+            double _gasRemaining = 0;
+>>>>>>> c89ad1ce84e59cd60f92602e251782149cb5cd19
             //act
             vehicle.AddGas();
             //assert
@@ -74,7 +95,11 @@ namespace CodeLouisvilleUnitTestProjectTests
         public void AddGasWithParameterAddsSuppliedAmountOfGas()
         {
             //arrange
+<<<<<<< HEAD
             Vehicle vehicle = new(4, 20, "Toyota", "Camry", 30);
+=======
+            
+>>>>>>> c89ad1ce84e59cd60f92602e251782149cb5cd19
             //act
             vehicle.AddGas(10);
 
@@ -113,7 +138,11 @@ namespace CodeLouisvilleUnitTestProjectTests
         public void GasLevelPercentageIsCorrectForAmountOfGas(string percent, float gasToAdd)
         {
             //arrange
+<<<<<<< HEAD
             Vehicle vehicle = new Vehicle(4, 10, "Benz", "GL450", 25);
+=======
+            Vehicle vehicle = new(4, 10, "Benz", "GL450", 25);
+>>>>>>> c89ad1ce84e59cd60f92602e251782149cb5cd19
             //act
             vehicle.AddGas(gasToAdd);
             //assert
