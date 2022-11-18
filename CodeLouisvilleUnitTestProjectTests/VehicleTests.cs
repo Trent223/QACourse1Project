@@ -86,7 +86,7 @@ namespace CodeLouisvilleUnitTestProjectTests
         //a GasOverfillException if too much gas is added to the tank.
          [Fact]
             public void AddingTooMuchGasThrowsGasOverflowException()
-                {
+            {
           //arrange
             Vehicle vehicle = new Vehicle(4, 15, "Benz", "GL450", 30);
 
@@ -188,9 +188,9 @@ namespace CodeLouisvilleUnitTestProjectTests
         //be used to change a flat tire
          [Fact]
           public void DriverHasFlatTire()
-           {
-        //arrange
-         Vehicle vehicle = new Vehicle(4, 15, "Toyota", "Camry", 30);
+          {
+             //arrange
+             Vehicle vehicle = new Vehicle(4, 15, "Toyota", "Camry", 30);
 
             //act
             
@@ -201,24 +201,9 @@ namespace CodeLouisvilleUnitTestProjectTests
              vehicle.HasFlatTire.Should().Be(false);
             
         
-        }
-         [Fact]
-             public async Task ChangeTireSuccessfulTest()
-              {
-            Vehicle vehicle = new Vehicle(4, 15, "Toyota", "Camry", 30);
-             vehicle.Drive(10);
-             await vehicle.ChangeTireSuccessfulTestAsync();
-            
-            vehicle.HasFlatTire.Should().Be(true);
-              }
-
-
-
-
-
+          }
+         
         //BONUS: Write a unit test that verifies that a flat
         //tire will occur after a certain number of miles.
-
-    //}
     }
 }

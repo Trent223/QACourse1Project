@@ -6,6 +6,10 @@ namespace CodeLouisvilleUnitTestProjectTests
 {
     public class SemiTruckTests
     {
+       
+
+        public CargoItem name { get; private set; }
+        public CargoItem Cargo { get; private set; }
 
         //Verify that the SemiTruck constructor creates a new SemiTruck
         //object which is also a Vehicle and has 18 wheels. Verify that the
@@ -25,7 +29,7 @@ namespace CodeLouisvilleUnitTestProjectTests
                
             
         }
-      
+
         //Verify that adding a CargoItem using LoadCargo does successfully add
         //that CargoItem to the Cargo. Confirm both the existence of the new
         //CargoItem in the Cargo and also that the count of Cargo increased to 1.
@@ -35,9 +39,9 @@ namespace CodeLouisvilleUnitTestProjectTests
             //arrange
             SemiTruck semiTruck = new(18, 20, "Toyota", "Camry", 15);
             //act
-            
+            semiTruck.LoadCargo(Cargo);
             //assert
-
+            semiTruck. Cargo.Should().NotBeNull();
         }
 
         //Verify that unloading a  cargo item that is in the Cargo does
@@ -46,25 +50,25 @@ namespace CodeLouisvilleUnitTestProjectTests
         public void UnloadCargoWithValidCargoTest()
         {
             //arrange
-            throw new NotImplementedException();
+            SemiTruck semiTruck = new(18, 20, "Toyota", "Camry", 15);
             //act
 
             //assert
-
+            semiTruck.Cargo.Should().BeNull();
         }
 
         //Verify that attempting to unload a CargoItem that does not
         //appear in the Cargo throws a System.ArgumentException
-        [Fact]
-        public void UnloadCargoWithInvalidCargoTest()
-        {
+        //[Fact]
+       // public void UnloadCargoWithInvalidCargoTest()
+        //{
             //arrange
-            throw new NotImplementedException();
+          //  SemiTruck semiTruck = new(18, 20, "Toyota", "Camry", 15);
             //act
-
+            //Action act = () => semiTruck.UnloadCargo(Cargo);
             //assert
-
-        }
+            //act.Should().Throw<ArgumentException>();
+        //}
 
         //Verify that getting cargo items by name returns all items
         //in Cargo with that name.

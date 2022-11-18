@@ -25,8 +25,8 @@ namespace CodeLouisvilleUnitTestProject
 
         {    
  
-            List<CargoItem> cargo = new List<CargoItem>();
-            cargo.Add(item);
+            List<CargoItem> Cargo = new List<CargoItem>();
+            Cargo.Add(item);
         }
     
              
@@ -39,7 +39,7 @@ namespace CodeLouisvilleUnitTestProject
        public CargoItem UnloadCargo(CargoItem name)
         {
             var  Result = Cargo.Remove(name);
-            if (Result)
+            if (!Result)
             return name;
             else throw new ArgumentException();
 
@@ -51,14 +51,17 @@ namespace CodeLouisvilleUnitTestProject
         /// </summary>
         /// <param name="name">The name to match</param>
         /// <returns>A List of CargoItems with the exact name passed</returns>
-       // public List<CargoItem> GetCargoItemsByName(string name)
-        //{
-          //  if (name)
-            //{
-              //  return Cargo;
-            //}
-           
-        //}
+       public List<CargoItem> GetCargoItemsByName(CargoItem name)
+        {
+           if (CargoItem)
+            {
+             return new List<CargoItem>();  
+            }
+           else 
+            {
+                return name;
+            }
+        }
 
         /// <summary>
         ///  Returns all CargoItems who have a description containing the passed description. If no CargoItems have that name, returns an empty list.
