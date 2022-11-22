@@ -51,16 +51,9 @@ namespace CodeLouisvilleUnitTestProject
         /// </summary>
         /// <param name="name">The name to match</param>
         /// <returns>A List of CargoItems with the exact name passed</returns>
-       public List<CargoItem> GetCargoItemsByName(CargoItem name)
+       public List<CargoItem> GetCargoItemsByName(string name)
         {
-           if (CargoItem)
-            {
-             return new List<CargoItem>();  
-            }
-           else 
-            {
-                return name;
-            }
+            return Cargo.Where(item => item.Name == name).ToList();
         }
 
         /// <summary>
